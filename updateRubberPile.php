@@ -190,7 +190,7 @@
             
             
                 if($p1_response and $p2_response and $p3_response and $p4_response){
-                    $query = "CALL mercury.UpdateRubberPile('".$_SESSION['product_id']."','".$_POST['p1_id']."','".$_POST['p2_id'].",'".$_POST['p3_id']."','".$_POST['p4_id']."');";
+                    $query = "CALL mercury.UpdateRubberPile('".$_SESSION['product_id']."','".$_POST['p1_id']."','".$_POST['p2_id']."','".$_POST['p3_id']."','".$_POST['p4_id']."');";
                     mysqli_query($dbc, $query);
 
                     header("Location:updateWhiteningSponge.php");

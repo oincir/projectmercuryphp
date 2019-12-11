@@ -63,7 +63,7 @@
                 
                 
                 <div class="text-left">
-						Personnel 1 
+						Personnel
 				</div>
                 
                 <div class="login100-form-title p-b-37" data-validate="Select Personnel">

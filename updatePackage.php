@@ -140,7 +140,7 @@
                 if($p1_response ){
                     $query = "CALL mercury.UpdatePackage('".$_SESSION['product_id']."','".$_POST['p1_id']."') ;";
                     mysqli_query($dbc, $query);
-
+                    header('Location:productOperationUI.php');
                     exit;
                 }
             }

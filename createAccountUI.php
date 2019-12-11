@@ -52,38 +52,18 @@
 					<span class="focus-input100"></span>
 				</div>
                 
+                <div class="wrap-input100 validate-input m-b-25" data-validate = "Enter password">
+					<input class="input100" type="password" name="password2" placeholder="Password">
+					<span class="focus-input100"></span>
+				</div>
+                
 
 
 				<div class="container-login100-form-btn">
 					<input type="submit" class="login100-form-btn" name="signup" value="Sign Up">
 				</div>
 
-                <!--
-				<div class="text-center p-t-57 p-b-20">
-					<span class="txt1">
-						Not a member?
-					</span>
-				</div>
-
-                
-				<div class="flex-c p-b-112">
-					<a href="#" class="login100-social-item">
-						<i class="fa fa-facebook-f"></i>
-					</a>
-
-					<a href="#" class="login100-social-item">
-						<img src="images/icons/icon-google.png" alt="GOOGLE">
-					</a>
-				</div>
-
-				<div class="text-center">
-					<a href="logintest.php" class="txt2 hov1">
-						Sign Up
-					</a>
-				</div>
-                -->
-                
-           
+       
 			</form>
 
 			
@@ -143,19 +123,22 @@
         if($username_response)
         {
             $row = mysqli_fetch_array($username_response);
-            if($row['username']==$username){
+            if($row['username']==$_POST['username']){
                 //echo "Username is already in using!!";
 
                
                 exit;
             }
+            
             else{
-                
+                if($_POST['password'] == $_POST['password2'] ){
+                    
                 $query = "CALL mercury.AddNewWebUser('".$username."','".$password."');";
                 $record = @mysqli_query($dbc, $query);
                 $_SESSION["user"] = 1;
                 header("Location:productOperationUI.php");
                 
+                }
             }
         }
 

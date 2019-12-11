@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Login</title>
@@ -27,9 +26,11 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
-<body>
-	
+    <body >
+
+    
     <?php
+
     session_start();
     $_SESSION["user"] = 0;
     $_SESSION["jcode"]= null;
@@ -37,6 +38,7 @@
     if(isset($_POST['logout'])){
         $_SESSION["user"] = 0;
     }
+    
     ?>
 
 
@@ -62,13 +64,15 @@
 
 				<div class="container-login100-form-btn">
 					<input type="submit" class="login100-form-btn" name="login" value="Login">
-				</div>
+                </div>
 
+                
 				<div class="text-center p-t-57 p-b-20">
 					<span class="txt1">
 						Not a member?
 					</span>
 				</div>
+                
 
                 
                 <!--
@@ -167,16 +171,18 @@
                 if($row['username'] == $_POST['username']){
                     
                     header("Location:productOperationUI.php");
-                    $_SESSION["user"]=1;
+                    $_SESSION["user"] = 1;
                 
                 }else
                 {
+
                     //echo "Invalid account!!";
                     exit;
                 }
                 
             }else
             {
+
                 //echo "Invalid account!!";
                 exit;
             }
@@ -184,15 +190,6 @@
         
         }
     ?>
-        
-    
-    
-    
-    
-    
-    
-    
-    
     
 </body>
 </html>
